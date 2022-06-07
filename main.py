@@ -187,8 +187,8 @@ def contact():
         with smtplib.SMTP("smtp.gmail.com", port=587 ) as connection:
             connection.starttls()
             connection.login(user = MY_MAIL,password=MAIL_PASSWORD)
-            connection.sendmail(to_addrs="kamal.sai8@gmail.com",from_addr=MY_MAIL,msg=f"Subject: Message form Kamal's Blog \n\nHi, A message from Kamal's blog \n mail:{mail}\n:User Name:{username}"
-                                                                    f"\nMessage : {message}\nWith Love,\nKamal's Blog")
+            connection.sendmail(to_addrs="kamal.sai8@gmail.com",from_addr=MY_MAIL,msg=f"Subject: Message form Kamal's Blog \n\nHi, \n \nA message from Kamal's blog \n mail:{mail}\n:User Name:{username}"
+                                                                    f"\nMessage : {message} \n \nWith Love,\nKamal's Blog")
 
         return render_template("contact.html",is_submitted=True)
 
