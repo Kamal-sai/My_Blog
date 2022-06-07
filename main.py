@@ -11,11 +11,13 @@ from flask_login import UserMixin, login_user, LoginManager, login_required, cur
 from forms import LoginForm, RegisterForm, CreatePostForm, CommentForm
 from flask_gravatar import Gravatar
 import smtplib
-import os
+from dotenv import dotenv_values
 
-secret_key = os.environ.get("SECRET_KEY")
-MY_MAIL = os.environ.get("MY_MAIL")
-MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
+env_variables = dotenv_values(".env")
+
+secret_key = env_variables["SECRET_KEY"]
+MY_MAIL = env_variables["MY_MAIL"]
+MAIL_PASSWORD = env_variables["MAIL_PASSWORD"]
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = secret_key
